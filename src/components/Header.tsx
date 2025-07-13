@@ -36,7 +36,7 @@ const Header = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="border-gray-700 hover:bg-gray-800 text-white"
+              className="border-gray-600 bg-transparent hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"
               onClick={handleGitHubClick}
             >
               <Github className="h-4 w-4 mr-2" />

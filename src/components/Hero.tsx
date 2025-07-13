@@ -1,5 +1,5 @@
 
-import { ArrowRight, Download, ExternalLink } from 'lucide-react';
+import { ArrowRight, Download, ExternalLink, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -24,6 +24,10 @@ const Hero = () => {
           <div className="flex items-center justify-center space-x-2 mb-6">
             <span className="text-blue-400 text-sm font-medium">🧭</span>
             <span className="text-gray-300 text-sm">Developer-Friendly SignalR Documentation</span>
+            <div className="flex items-center space-x-1 ml-4 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
+              <Tag className="h-3 w-3 text-green-400" />
+              <span className="text-green-400 text-xs font-medium">v1.0.0</span>
+            </div>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
