@@ -1,10 +1,9 @@
-
-import { Github, Star, GitFork, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Star, GitFork, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const handleGitHubClick = () => {
-    window.open('https://github.com/mberrishdev/HubDocs', '_blank');
+    window.open("https://github.com/mberrishdev/HubDocs", "_blank");
   };
 
   return (
@@ -17,25 +16,38 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-white">HubDocs</h1>
-              <p className="text-xs text-gray-400">SignalR Documentation Tool</p>
+              <p className="text-xs text-gray-400">
+                SignalR Documentation Tool
+              </p>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center space-x-4 text-sm">
-              <div className="flex items-center space-x-1 text-gray-300">
+              <a
+                href="https://github.com/mberrishdev/hubdocs/stargazers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 text-gray-300 hover:text-gray-100"
+              >
                 <Star className="h-4 w-4" />
-                <span>GitHub stars</span>
-              </div>
-              <div className="flex items-center space-x-1 text-gray-300">
+                <span>Star on GitHub</span>
+              </a>
+
+              <a
+                className="flex items-center space-x-1 text-gray-300"
+                href="https://github.com/mberrishdev/hubdocs/fork"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GitFork className="h-4 w-4" />
                 <span>Forks</span>
-              </div>
+              </a>
             </div>
-            
-            <Button 
-              variant="outline" 
-              size="sm" 
+
+            <Button
+              variant="outline"
+              size="sm"
               className="border-gray-600 bg-transparent hover:bg-gray-700 text-gray-300 hover:text-white transition-colors"
               onClick={handleGitHubClick}
             >

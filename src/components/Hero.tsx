@@ -56,7 +56,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-gray-600 hover:bg-gray-800 text-white px-8 py-4 text-lg"
+              className="border-gray-600 hover:bg-gray-800 px-8 py-4 text-lg"
               onClick={handleViewDemoClick}
             >
               <ExternalLink className="h-5 w-5 mr-2" />
