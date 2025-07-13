@@ -1,6 +1,7 @@
 
 import { ArrowRight, Download, ExternalLink, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const handleInstallClick = () => {
@@ -10,6 +11,24 @@ const Hero = () => {
   const handleViewDemoClick = () => {
     window.open('https://github.com/mberrishdev/HubDocs#-live-demo', '_blank');
   };
+
+  const [version, setVersion] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function fetchNugetVersion() {
+      const url = `https://api.nuget.org/v3-flatcontainer/hubdocs/index.json`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) return;
+        const data = await res.json();
+        setVersion(data.versions[data.versions.length - 1]);
+      } catch {
+        // handle error silently
+      }
+    }
+
+    fetchNugetVersion();
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 pt-20 pb-32">
@@ -26,7 +45,7 @@ const Hero = () => {
             <span className="text-gray-300 text-sm">Developer-Friendly SignalR Documentation</span>
             <div className="flex items-center space-x-1 ml-4 px-2 py-1 bg-green-500/10 border border-green-500/20 rounded-full">
               <Tag className="h-3 w-3 text-green-400" />
-              <span className="text-green-400 text-xs font-medium">v1.0.0</span>
+              <span className="text-green-400 text-xs font-medium">{version ? `v${version}` : 'Loading...'}</span>
             </div>
           </div>
           

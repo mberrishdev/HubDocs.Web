@@ -5,16 +5,13 @@ import { Button } from '@/components/ui/button';
 const Footer = () => {
   const links = {
     project: [
-      { name: 'Documentation', href: '#' },
-      { name: 'GitHub Repository', href: '#' },
-      { name: 'NuGet Package', href: '#' },
-      { name: 'Release Notes', href: '#' }
+      { name: 'Documentation', href: 'https://github.com/mberrishdev/HubDocs/blob/main/README.md' },
+      { name: 'GitHub Repository', href: 'http://github.com/mberrishdev/Hubdocs' },
+      { name: 'NuGet Package', href: 'https://www.nuget.org/packages/HubDocs' },
     ],
     community: [
-      { name: 'Issues', href: '#' },
-      { name: 'Discussions', href: '#' },
-      { name: 'Contributing', href: '#' },
-      { name: 'Code of Conduct', href: '#' }
+      { name: 'Issues', href: 'https://github.com/mberrishdev/HubDocs/issues' },
+      { name: 'Contributing', href: 'https://github.com/mberrishdev/hubdocs/fork' },
     ],
     resources: [
       { name: 'ASP.NET Core Docs', href: '#' },
