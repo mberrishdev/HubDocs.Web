@@ -3,6 +3,14 @@ import { ArrowRight, Download, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleInstallClick = () => {
+    window.open('https://www.nuget.org/packages/HubDocs', '_blank');
+  };
+
+  const handleViewDemoClick = () => {
+    window.open('https://github.com/mberrishdev/HubDocs#-live-demo', '_blank');
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 pt-20 pb-32">
       <div className="absolute inset-0">
@@ -31,13 +39,22 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+              onClick={handleInstallClick}
+            >
               <Download className="h-5 w-5 mr-2" />
               Install via NuGet
               <ArrowRight className="h-5 w-5 ml-2" />
             </Button>
             
-            <Button variant="outline" size="lg" className="border-gray-600 hover:bg-gray-800 text-white px-8 py-4 text-lg">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-gray-600 hover:bg-gray-800 text-white px-8 py-4 text-lg"
+              onClick={handleViewDemoClick}
+            >
               <ExternalLink className="h-5 w-5 mr-2" />
               View Demo
             </Button>

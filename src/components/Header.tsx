@@ -3,6 +3,10 @@ import { Github, Star, GitFork, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
+  const handleGitHubClick = () => {
+    window.open('https://github.com/mberrishdev/HubDocs', '_blank');
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-gray-800 bg-gray-900/95 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4">
@@ -29,7 +33,12 @@ const Header = () => {
               </div>
             </div>
             
-            <Button variant="outline" size="sm" className="border-gray-700 hover:bg-gray-800 text-white">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-gray-700 hover:bg-gray-800 text-white"
+              onClick={handleGitHubClick}
+            >
               <Github className="h-4 w-4 mr-2" />
               GitHub
             </Button>
